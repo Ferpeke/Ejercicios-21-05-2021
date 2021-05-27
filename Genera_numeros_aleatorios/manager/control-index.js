@@ -9,7 +9,9 @@ $(document).ready(function(){
       url : './control/Genera_números_aleatorios.php',
       data : '',
       success : respuesta => {
+
         respuesta = JSON.parse(respuesta);
+        console.log(respuesta)
         // $.each(respuesta, function(index, item){
         //   $('#imprime_numeros').html($('#imprime_numeros').html()+`
             // <tr>
@@ -21,14 +23,14 @@ $(document).ready(function(){
         // });
         
         respuesta.forEach(
-          function(elemento, indice) {
-          $('#imprime_numeros').html($('#imprime_numeros').html()+`
+          function(valor, indice) {
+          $('#imprime_numeros').html($('#imprime_numeros').html() +`
             
             <tr>
-              <th scope="row">${indice + 1}</th>
-              <td>${elemento}</td>
+              <td scope="row">${indice + 1}</td>
+              <td>${valor}</td>
             
-            </tr>
+            </tr> 
           
           `);
         })
